@@ -1,0 +1,197 @@
+/* Ricette Page Specific Styles */
+
+.container_ricette {
+    display: block;
+    padding: 0;
+}
+
+.intro-section {
+    background: white;
+    padding: 60px 80px;
+    text-align: center;
+}
+
+.intro-section h1 {
+    font-size: 48px;
+    color: darkslategray;
+    margin-bottom: 20px;
+}
+
+.intro-section p {
+    font-size: 16px;
+    color: #555;
+    line-height: 1.6;
+}
+
+.macrosection-ricette {
+    padding: 60px 80px;
+    background: white;
+    border-top: 3px solid darkslategray;
+    margin-top: 0;
+}
+
+.macrosection-ricette h2 {
+    font-size: 36px;
+    color: darkslategray;
+    margin-bottom: 40px;
+}
+
+.recipe-container {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.arrow-nav {
+    background: darkslategray;
+    color: white;
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-size: 28px;
+    cursor: pointer;
+    transition: background 0.3s;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.arrow-nav:hover {
+    background: #5a6f7d;
+}
+
+.arrow-left {
+    order: -1;
+}
+
+.grid-ricette {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    flex: 1;
+}
+
+.card-ricette {
+    border-radius: 12px;
+    overflow: hidden;
+    background: white;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+    display: flex;
+    flex-direction: column;
+    border: 2px solid #f0f0f0;
+}
+
+.card-ricette:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    border-color: darkslategray;
+}
+
+.card-ricette .card-img {
+    height: 180px;
+    overflow: hidden;
+    background-color: #f0f0f0;
+}
+
+.card-ricette .card-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.card-ricetta-header {
+    padding: 12px;
+    background: white;
+    border-bottom: 2px solid darkslategray;
+}
+
+.card-ricetta-header h3 {
+    font-size: 16px;
+    color: darkslategray;
+    margin: 0;
+    font-weight: bold;
+}
+
+.card-ricetta-text {
+    padding: 12px;
+    flex: 1;
+    overflow-y: auto;
+    max-height: 120px;
+}
+
+.card-ricetta-text p {
+    font-size: 13px;
+    line-height: 1.5;
+    color: #555;
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    .intro-section {
+        padding: 40px 20px;
+    }
+
+    .intro-section h1 {
+        font-size: 32px;
+        margin-bottom: 10px;
+    }
+
+    .intro-section p {
+        font-size: 14px;
+    }
+
+    .macrosection-ricette {
+        padding: 40px 20px;
+        border-top: 2px solid darkslategray;
+    }
+
+    .macrosection-ricette h2 {
+        font-size: 28px;
+        margin-bottom: 30px;
+    }
+
+    .recipe-container {
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    .arrow-nav {
+        width: 45px;
+        height: 45px;
+        font-size: 24px;
+    }
+
+    .grid-ricette {
+        display: flex;
+        overflow-x: auto;
+        overflow-y: hidden;
+        scroll-snap-type: x mandatory;
+        gap: 15px;
+        width: 100%;
+        flex: none;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .card-ricette {
+        min-width: 85vw;
+        flex-shrink: 0;
+        scroll-snap-align: start;
+    }
+
+    .card-ricette .card-img {
+        height: 150px;
+    }
+
+    .card-ricetta-text {
+        max-height: 90px;
+    }
+
+    .card-ricetta-text p {
+        font-size: 12px;
+    }
+}

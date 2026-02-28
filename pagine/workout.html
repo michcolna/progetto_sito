@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sito Fitness/workout</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../workout.css">
+</head>
+<body>
+
+    <header>
+        <nav>
+            <div class="logo">SUMMER SHAPE ITALIA</div>
+            <ul>
+                <li class="nav-item">
+                    <a href="workout.html">Workout</a>
+                    <div class="dropdown">
+                        <a href="#upper-body">Upper Body</a>
+                        <a href="#lower-body">Lower Body</a>
+                        <a href="#total-body">Total Body</a>
+                        <a href="#perdita-peso">Perdita di Peso</a>
+                    </div>
+                </li>
+                <li><a href="ricette.html">Ricette</a></li>
+            </ul>
+            <div class="icona">
+                <li><a href="index.html"><img src="../immagini/home.png" alt="logo-home"></a></li>
+            </div>
+        </nav>
+    </header>
+
+    <section class="intro-section">
+        <h1>Workout</h1>
+        <p>Scopri i nostri esercizi organizzati per gruppi muscolari e obiettivi di fitness. Scegli il tuo programma di allenamento ideale e inizia il tuo percorso verso un corpo più forte e sano.</p>
+    </section>
+
+    <main class="container_grid">
+        <!-- Upper Body Section -->
+        <section id="upper-body" class="macrosection">
+            <h2>Upper Body</h2>
+            <div class="grid-cards">
+                <article class="card-workout" onclick="openModal(this)">
+                    <div class="card-img">
+                        <img src="../immagini/prova.jpg" alt="Petto e Spalle">
+                    </div>
+                    <div class="card-text">
+                        <h3>Petto e Spalle</h3>
+                    </div>
+                    <div class="card-description" style="display:none;">Esercizi mirati per sviluppare il petto e le spalle. Utilizzando manubri e bilancieri per risultati massimi.</div>
+                </article>
+
+                <article class="card-workout" onclick="openModal(this)">
+                    <div class="card-img">
+                        <img src="../immagini/prova.jpg" alt="Braccia e Avambracci">
+                    </div>
+                    <div class="card-text">
+                        <h3>Braccia e Avambracci</h3>
+                    </div>
+                    <div class="card-description" style="display:none;">Tonifica le braccia con esercizi specifici per bicipiti, tricipiti e avambracci.</div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Lower Body Section -->
+        <section id="lower-body" class="macrosection">
+            <h2>Lower Body</h2>
+            <div class="grid-cards">
+                <article class="card-workout" onclick="openModal(this)">
+                    <div class="card-img">
+                        <img src="../immagini/prova.jpg" alt="Gambe Forti">
+                    </div>
+                    <div class="card-text">
+                        <h3>Gambe Forti</h3>
+                    </div>
+                    <div class="card-description" style="display:none;">Allena quadricipiti, femorali e polpacci con esercizi efficaci per gambe potenti.</div>
+                </article>
+
+                <article class="card-workout" onclick="openModal(this)">
+                    <div class="card-img">
+                        <img src="../immagini/prova.jpg" alt="Glutei Tonici">
+                    </div>
+                    <div class="card-text">
+                        <h3>Glutei Tonici</h3>
+                    </div>
+                    <div class="card-description" style="display:none;">Esercizi specifici per glutei con risultati visibili in poche settimane.</div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Total Body Section -->
+        <section id="total-body" class="macrosection">
+            <h2>Total Body</h2>
+            <div class="grid-cards">
+                <article class="card-workout" onclick="openModal(this)">
+                    <div class="card-img">
+                        <img src="../immagini/prova.jpg" alt="Circuito Completo">
+                    </div>
+                    <div class="card-text">
+                        <h3>Circuito Completo</h3>
+                    </div>
+                    <div class="card-description" style="display:none;">Un allenamento che coinvolge tutto il corpo per risultati completi e equilibrati.</div>
+                </article>
+
+                <article class="card-workout" onclick="openModal(this)">
+                    <div class="card-img">
+                        <img src="../immagini/prova.jpg" alt="Functional Training">
+                    </div>
+                    <div class="card-text">
+                        <h3>Functional Training</h3>
+                    </div>
+                    <div class="card-description" style="display:none;">Esercizi funzionali per migliorare la forza, l'equilibrio e la coordinazione generale.</div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Perdita di Peso Section -->
+        <section id="perdita-peso" class="macrosection">
+            <h2>Perdita di Peso</h2>
+            <div class="grid-cards">
+                <article class="card-workout" onclick="openModal(this)">
+                    <div class="card-img">
+                        <img src="../immagini/prova.jpg" alt="Cardio Intenso">
+                    </div>
+                    <div class="card-text">
+                        <h3>Cardio Intenso</h3>
+                    </div>
+                    <div class="card-description" style="display:none;">Brucia più calorie possibili con allenamenti cardio ad alta intensità.</div>
+                </article>
+
+                <article class="card-workout" onclick="openModal(this)">
+                    <div class="card-img">
+                        <img src="../immagini/prova.jpg" alt="HIIT Training">
+                    </div>
+                    <div class="card-text">
+                        <h3>HIIT Training</h3>
+                    </div>
+                    <div class="card-description" style="display:none;">High Intensity Interval Training per dimagrire velocemente e aumentare il metabolismo.</div>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal per visualizzare il dettaglio -->
+    <div id="modal" class="modal" onclick="closeModal(event)">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <button class="modal-close" onclick="closeModal()">&times;</button>
+            <img id="modal-img" src="" alt="">
+            <div class="modal-text">
+                <h2 id="modal-title"></h2>
+                <p id="modal-description"></p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function openModal(element) {
+            const img = element.querySelector('.card-img img');
+            const title = element.querySelector('.card-text h3');
+            const description = element.querySelector('.card-description');
+            
+            document.getElementById('modal-img').src = img.src;
+            document.getElementById('modal-img').alt = img.alt;
+            document.getElementById('modal-title').textContent = title.textContent;
+            document.getElementById('modal-description').textContent = description.textContent;
+            
+            document.getElementById('modal').classList.add('active');
+        }
+        
+        function closeModal(event) {
+            document.getElementById('modal').classList.remove('active');
+        }
+    </script>
+</body>
+</html>

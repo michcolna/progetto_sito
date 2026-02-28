@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sito Fitness/ricette</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../ricette.css">
+</head>
+<body>
+
+    <header>
+        <nav>
+            <div class="logo">SUMMER SHAPE ITALIA</div>
+            <ul>
+                <li class="nav-item">
+                    <a href="workout.html">Workout</a>
+                    <div class="dropdown">
+                        <a href="workout.html#upper-body">Upper Body</a>
+                        <a href="workout.html#lower-body">Lower Body</a>
+                        <a href="workout.html#total-body">Total Body</a>
+                        <a href="workout.html#perdita-peso">Perdita di Peso</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a href="ricette.html">Ricette</a>
+                    <div class="dropdown">
+                        <a href="ricette.html#colazioni">Colazioni Proteiche</a>
+                        <a href="ricette.html#pranzi">Pranzi Healthy</a>
+                        <a href="ricette.html#cene">Cene Bilanciate</a>
+                    </div>
+                </li>
+            </ul>
+            <div class="icona">
+                <li><a href="index.html"><img src="../immagini/home.png" alt="logo-home"></a></li>
+            </div>
+        </nav>
+    </header>
+
+    <section class="intro-section">
+        <h1>Ricette Fitness</h1>
+        <p>Scopri deliziose ricette pensate per il tuo allenamento.</p>
+    </section>
+
+    <main class="container_ricette">
+        <!-- Colazioni Proteiche -->
+        <section id="colazioni" class="macrosection-ricette">
+            <h2>Colazioni Proteiche</h2>
+            <div class="recipe-container">
+                <button class="arrow-nav arrow-left" onclick="scrollRecipe('colazioni', -1)">&#8249;</button>
+                <div class="grid-ricette">
+                    <article class="card-ricette" onclick="openModal(this)">
+                        <div class="card-img">
+                            <img src="../immagini/prova.jpg" alt="Pancake Proteici">
+                        </div>
+                        <div class="card-ricetta-header">
+                            <h3>Pancake Proteici</h3>
+                        </div>
+                        <div class="card-ricetta-text">
+                            <p>Pancake ricchi di proteine con albumi d'uovo, farina d'avena e frutti di bosco. Perfetti per iniziare la giornata con energia.</p>
+                        </div>
+                        <div class="card-description" style="display:none;">Pancake ricchi di proteine realizzati con albumi d'uovo, farina d'avena integrale e proteine in polvere. Serviti con frutti di bosco freschi e miele.</div>
+                    </article>
+                </div>
+                <button class="arrow-nav arrow-right" onclick="scrollRecipe('colazioni', 1)">&#8250;</button>
+            </div>
+        </section>
+
+        <!-- Pranzi Healthy -->
+        <section id="pranzi" class="macrosection-ricette">
+            <h2>Pranzi Healthy</h2>
+            <div class="recipe-container">
+                <button class="arrow-nav arrow-left" onclick="scrollRecipe('pranzi', -1)">&#8249;</button>
+                <div class="grid-ricette">
+                    <article class="card-ricette" onclick="openModal(this)">
+                        <div class="card-img">
+                            <img src="../immagini/prova.jpg" alt="Petto di Pollo alla Griglia">
+                        </div>
+                        <div class="card-ricetta-header">
+                            <h3>Petto di Pollo</h3>
+                        </div>
+                        <div class="card-ricetta-text">
+                            <p>Petto di pollo magro grigliato con verdure fresche e riso integrale. Ricco di proteine magre e povero di grassi.</p>
+                        </div>
+                        <div class="card-description" style="display:none;">Petto di pollo magro grigliato con erbe aromatiche, accompagnato da verdure fresche di stagione e riso integrale. Ricco di proteine magre e perfetto per supportare la crescita muscolare.</div>
+                    </article>
+                </div>
+                <button class="arrow-nav arrow-right" onclick="scrollRecipe('pranzi', 1)">&#8250;</button>
+            </div>
+        </section>
+
+        <!-- Cene Bilanciate -->
+        <section id="cene" class="macrosection-ricette">
+            <h2>Cene Bilanciate</h2>
+            <div class="recipe-container">
+                <button class="arrow-nav arrow-left" onclick="scrollRecipe('cene', -1)">&#8249;</button>
+                <div class="grid-ricette">
+                    <article class="card-ricette" onclick="openModal(this)">
+                        <div class="card-img">
+                            <img src="../immagini/prova.jpg" alt="Salmone al Forno">
+                        </div>
+                        <div class="card-ricetta-header">
+                            <h3>Salmone al Forno</h3>
+                        </div>
+                        <div class="card-ricetta-text">
+                            <p>Salmone fresco infornato con limone e broccoli. Ricco di omega-3 e proteine. Supporta la salute cardiovascolare.</p>
+                        </div>
+                        <div class="card-description" style="display:none;">Filetti di salmone fresco infornati con limone e erbe aromatiche a 180°C. Accompagnati con patate dolci al forno e broccoli al vapore. Gli omega-3 aiutano a ridurre l'infiammazione.</div>
+                    </article>
+                </div>
+                <button class="arrow-nav arrow-right" onclick="scrollRecipe('cene', 1)">&#8250;</button>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal per visualizzare il dettaglio -->
+    <div id="modal" class="modal" onclick="closeModal(event)">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <button class="modal-close" onclick="closeModal()">&times;</button>
+            <img id="modal-img" src="" alt="">
+            <div class="modal-text">
+                <h2 id="modal-title"></h2>
+                <p id="modal-description"></p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function openModal(element) {
+            const img = element.querySelector('.card-img img');
+            const title = element.querySelector('.card-ricetta-header h3');
+            const description = element.querySelector('.card-description');
+            
+            document.getElementById('modal-img').src = img.src;
+            document.getElementById('modal-img').alt = img.alt;
+            document.getElementById('modal-title').textContent = title.textContent;
+            document.getElementById('modal-description').textContent = description.textContent;
+            
+            document.getElementById('modal').classList.add('active');
+        }
+        
+        function closeModal(event) {
+            document.getElementById('modal').classList.remove('active');
+        }
+
+        function scrollRecipe(sectionId, direction) {
+            const section = document.getElementById(sectionId);
+            const grid = section.querySelector('.grid-ricette');
+            const scrollAmount = direction * 350;
+            grid.scrollBy({
+                left: scrollAmount,
+                behavior: 'smooth'
+            });
+        }
+    </script>
+</body>
+</html>
