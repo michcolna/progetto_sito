@@ -67,10 +67,13 @@
 }
 
 .grid-ricette {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    display: flex;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
     gap: 30px;
     flex: 1;
+    -webkit-overflow-scrolling: touch;
 }
 
 .card-ricette {
@@ -83,6 +86,9 @@
     display: flex;
     flex-direction: column;
     border: 2px solid #f0f0f0;
+    min-width: 90%;
+    flex-shrink: 0;
+    scroll-snap-align: start;
 }
 
 .card-ricette:hover {
@@ -156,14 +162,15 @@
     }
 
     .recipe-container {
-        flex-wrap: wrap;
-        gap: 15px;
+        flex-wrap: nowrap;
+        gap: 10px;
     }
 
     .arrow-nav {
-        width: 45px;
-        height: 45px;
-        font-size: 24px;
+        width: 40px;
+        height: 40px;
+        font-size: 20px;
+        flex-shrink: 0;
     }
 
     .grid-ricette {
@@ -172,8 +179,7 @@
         overflow-y: hidden;
         scroll-snap-type: x mandatory;
         gap: 15px;
-        width: 100%;
-        flex: none;
+        flex: 1;
         -webkit-overflow-scrolling: touch;
     }
 

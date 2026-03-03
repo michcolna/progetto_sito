@@ -14,7 +14,7 @@ body {
 /* Header & Navigation */
 header {
     background-color: darkslategray;
-    padding: 15px 30px;
+    padding: 10px 20px;
     width: 100%;
     position: sticky;
     top: 0;
@@ -53,9 +53,22 @@ nav ul li a {
     color: white;
     text-decoration: none;
     font-weight: bold;
-    font-size: 18px;
+    font-size: 16px;
+    padding: 10px 15px;
     transition: 0.3s;
+    display: inline-block;
 }
+
+/* ensure cards clickable on mobile */
+article.card-workout, article.card-ricette {
+    position: relative;
+    z-index: 1;
+}
+
+.card-img, .card-img img {
+    pointer-events: auto;
+}
+
 
 nav ul li a:hover {
     color: #2f3542;
@@ -63,6 +76,7 @@ nav ul li a:hover {
 
 .nav-item {
     position: relative;
+    padding-bottom: 10px;
 }
 
 .nav-item:hover .dropdown {
@@ -80,7 +94,7 @@ nav ul li a:hover {
     border-radius: 4px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     min-width: 180px;
-    margin-top: 5px;
+    margin-top: 0;
     z-index: 100;
 }
 
@@ -194,34 +208,66 @@ nav ul li a:hover {
     color: #555;
 }
 
+/* Footer */
+footer {
+    background-color: darkslategray;
+    color: white;
+    padding: 25px 30px;
+    text-align: center;
+    font-size: 14px;
+    width: 100%;
+    margin-top: 40px;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
+    /* give some breathing room after cover */
+    .cover {
+        margin-bottom: 20px;
+    }
+    .sezione, .macrosection-ricette {
+        padding: 20px 0;
+    }
+
     header {
-        padding: 10px 15px;
+        padding: 8px 10px;
+        position: relative;
     }
 
     nav {
         flex-wrap: wrap;
         gap: 10px;
+        align-items: center;
+        justify-content: center;
     }
 
     .logo {
+        display: none;
+    }
+
+    nav ul li:first-child {
+        margin: 0;
+    }
+
+    nav ul li:first-child a {
+        padding: 5px 10px;
         font-size: 16px;
     }
 
     nav ul {
-        flex-direction: column;
+        flex-direction: row;
         text-align: center;
-        gap: 10px;
-        width: 100%;
+        gap: 15px;
+        justify-content: center;
     }
 
     nav ul li {
-        margin: 5px 0;
+        margin: 0;
     }
 
     nav ul li a {
-        font-size: 16px;
+        font-size: 14px;
+        padding: 8px 12px;
     }
 
     .dropdown {
@@ -240,6 +286,12 @@ nav ul li a:hover {
     .container {
         padding: 20px;
     }
+
+    footer {
+        padding: 15px 20px;
+        font-size: 12px;
+    }
+
 
     .modal-content {
         width: 90%;
