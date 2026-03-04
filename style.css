@@ -273,12 +273,15 @@ footer {
     }
 
     .dropdown {
-        position: static;
+        position: absolute;
         display: none;
         box-shadow: none;
-        background: rgba(0, 0, 0, 0.1);
+        background: darkslategray;
         margin: 0;
         padding: 5px 0;
+        top: 100%;
+        left: 0;
+        min-width: 180px;
     }
 
     .nav-item:hover .dropdown {
